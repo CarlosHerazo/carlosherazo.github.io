@@ -25,6 +25,7 @@
     box-sizing: border-box;
     font-family: "Montserrat", sans-serif;
     background-color: var(--color-background);
+    scroll-behavior: smooth;
 }
 
 header {
@@ -36,10 +37,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: background-color 0.3s; /* Transición suave */
+ 
+   
 }
 
 span {
     color: var(--color-primary);
+    background-color: transparent;
     font-weight: 900;
     letter-spacing: 1px;
     font-size: 2.5em;
@@ -54,16 +59,24 @@ nav {
     justify-content: space-between;
     padding: 0 50px 0 100px;
     flex-wrap: wrap;
+    background-color: transparent;
+
+}
+
+.scrolled {
+    background-color: var(--color-dark-grey); /* Color cuando se hace scroll */
 }
 
 ul {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
+    background-color: transparent;
 }
 
 ul li {
     margin: 0 5px;
+    background-color: transparent;
 }
 
 ul li a {
@@ -77,10 +90,10 @@ ul li a {
     transition: all 0.3s ease;
 }
 
-ul li a:hover {
+/* ul li a:hover {
     color: black;
     background: var(--color-white);
-}
+} */
 
 /* section banner*/
 
@@ -102,9 +115,7 @@ section img {
     border-radius: 50%;
 }
 
-section img#moon {
-    mix-blend-mode: screen;
-}
+
 
 .button_section_banner {
     background-color:   var(--color-accent);

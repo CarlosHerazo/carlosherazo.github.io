@@ -28,17 +28,15 @@
     scroll-behavior: smooth;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
+.header {
+    /* position: fixed; */
     width: 100%;
     z-index: 1000;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    /* padding: 0px 20px; */
     align-items: center;
     transition: background-color 0.3s; /* Transición suave */
- 
    
 }
 
@@ -51,16 +49,40 @@ span {
     line-height: 80px;
 }
 
-nav {
-    display: flex;
+.nav{
+    display: none;
     height: 80px;
     width: 100%;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 50px 0 100px;
-    flex-wrap: wrap;
+    justify-content: end;
+    padding: 0 0 0 100px;
     background-color: transparent;
+}
 
+.nav_buger{
+    display: none;
+    max-width: 100%;
+    align-items: center;
+    justify-content: end;
+    background-color: transparent;
+    color: var(--color-white);
+    transition: transform 0.3s ease-in-out; /* Transición suave de 0.3 segundos */
+}
+
+.nav_buger.show {
+    transform: translateX(0); /* Mostrar el menú desplazándolo hacia la derecha */
+}
+
+.nav_buger ul {
+    display: flex;
+    flex-direction: column;
+}
+.nav_buger ul li{
+    text-decoration: none;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    height: 0px;
 }
 
 .scrolled {
@@ -90,27 +112,26 @@ ul li a {
     transition: all 0.3s ease;
 }
 
-/* ul li a:hover {
-    color: black;
-    background: var(--color-white);
-} */
 
 /* section banner*/
 
 .section_banner {
     display: flex;
-
-    height: 100vh;
+    flex-direction: column;
+    /* height: 100vh; */
     width: 100%;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 5px;
     padding: 0 100px;
+    margin-top: auto;
+    text-align: center;
+    
 }
 
 section img {
-    width: 700px;
-    height: 700px;
+    max-width: 300px;
+    height: 300px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -152,7 +173,12 @@ section img {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
+.fa-bars{
+    transition: none;
+    font-size: 30px;
+    padding: 20px;
+    background-color: transparent;
+}
 .fab:hover {
     transform: scale(1.2);
 }
@@ -211,13 +237,17 @@ section img {
     position: relative;
     padding: 20px 0;
     margin: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 
 .timeline_item {
     position: relative;
-    padding: 20px 20px 20px 40px;
-    margin-bottom: 20px;
+    padding: 0 0 20px 40px;
+
 }
 
 .timeline_item::before {
